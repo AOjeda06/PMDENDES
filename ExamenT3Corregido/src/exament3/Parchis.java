@@ -30,22 +30,39 @@ public class Parchis {
 	private static final Logger LOGGER = Logger.getLogger(Parchis.class.getName());
 
 	/**
-	 * Valores de los dados utilizados en el juego.
+	 * Valores del dado 1
 	 */
 	/* default */
-	static int dado1, dado2;
+	static int dado1;
 
 	/**
-	 * Posición de las fichas de los jugadores 1 y 2 en el tablero.
+	 * Valor del dado 2
 	 */
 	/* default */
-	int fichaJ1 = 0, fichaJ2 = 0;
+	static int dado2;
 
 	/**
-	 * Nombres de los jugadores 1 y 2.
+	 * Posición de la ficha del jugador 1
 	 */
 	/* default */
-	String nomJ1 = "", nomJ2 = "";
+	int fichaJ1;
+
+	/**
+	 * Posición de la ficha del jugador 2
+	 */
+	/* default */
+	int fichaJ2;
+
+	/**
+	 * Nombres del jugador 1.
+	 */
+	/* default */
+	String nomJ1 = "";
+	/**
+	 * Nombre del jugador 2.
+	 */
+	/* default */
+	String nomJ2 = "";
 
 	/**
 	 * Constructor por defecto de la clase Parchis.
@@ -60,7 +77,7 @@ public class Parchis {
 	 * @param nomJ1 Nombre del jugador 1.
 	 * @param nomJ2 Nombre del jugador 2.
 	 */
-	public Parchis(String nomJ1, String nomJ2) {
+	public Parchis(final String nomJ1, final String nomJ2) {
 		super();
 		this.nomJ1 = nomJ1;
 		this.nomJ2 = nomJ2;
@@ -70,7 +87,7 @@ public class Parchis {
 	 * Método estático que simula el lanzamiento de los dados.
 	 */
 	public static void tiraDados() {
-		Random rand = new Random();
+		final Random rand = new Random();
 		dado1 = rand.nextInt(1, 7);
 		dado2 = rand.nextInt(1, 7);
 	}
@@ -116,8 +133,8 @@ public class Parchis {
 	 *
 	 * @param jugador Número del jugador (1 o 2) que avanza su ficha.
 	 */
-	public void avanzaPosiciones(int jugador) {
-		int tirada = dado1 + dado2;
+	public void avanzaPosiciones(final int jugador) {
+		final int tirada = dado1 + dado2;
 
 		if (jugador == JUGADOR_1) {
 			fichaJ1 += tirada;
@@ -154,15 +171,13 @@ public class Parchis {
 	 * @return Nombre del jugador ganador o una cadena vacía si no hay ganador.
 	 */
 	public String esGanador() {
-
+		String ganador = "";
 		if (fichaJ1 == TAM_TABLERO) {
-			return nomJ1;
+			ganador = nomJ1;
 		} else if (fichaJ2 == TAM_TABLERO) {
-			return nomJ2;
-		} else {
-			return "";
+			ganador = nomJ2;
 		}
-
+		return ganador;
 	}
 
 }

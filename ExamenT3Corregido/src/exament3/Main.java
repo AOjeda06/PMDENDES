@@ -11,7 +11,7 @@ public class Main {
 		String ganador = "";
 		int turno = 1;
 
-		System.out.println("BIENVENIDO AL PARCHÕçS DEL IES NERVI”N =D");
+		System.out.println("BIENVENIDO AL PARCHÕçS DEL IES NERVIÔøΩN =D");
 
 		System.out.println("Introduzca el nombre del jugador 1");
 		nomJ1 = sc.nextLine();
@@ -29,20 +29,20 @@ public class Main {
 			sc.nextLine();
 
 			turno(parchis, turno);
-			if(Parchis.dado1 != Parchis.dado2) {
-				turno = turno==1 ? 2 : 1;
+			if (Parchis.dado1 != Parchis.dado2) {
+				turno = turno == 1 ? 2 : 1;
 			}
 
 			ganador = parchis.esGanador();
 		}
 
-		System.out.println("°ENHORABUENA " + parchis.nomJ1 + ", HAS GANADO!");
+		System.out.println("ÔøΩENHORABUENA " + parchis.nomJ1 + ", HAS GANADO!");
 
 	}
 
 	public static void turno(Parchis parchis, int jugador) {
 
-		System.out.println("Turno de " + (jugador==1 ? parchis.nomJ1 : parchis.nomJ2));
+		System.out.println("Turno de " + (jugador == 1 ? parchis.nomJ1 : parchis.nomJ2));
 		Parchis.tiraDados();
 		System.out.println("La tirada ha sido " + Parchis.dado1 + " y " + Parchis.dado2);
 		parchis.avanzaPosiciones(jugador);

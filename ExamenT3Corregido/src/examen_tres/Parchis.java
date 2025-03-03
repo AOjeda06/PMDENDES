@@ -1,4 +1,4 @@
-package exament3;
+package examen_tres;
 
 import java.util.Random;
 import java.util.logging.Logger;
